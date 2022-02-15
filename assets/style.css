@@ -1,0 +1,112 @@
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+}
+
+#game-window {
+    outline: 5px groove black;
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    align-items: center;
+    
+}
+
+#question-window {
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-container {
+    flex-direction: column;
+    outline: 5px groove black;
+    height: 87%;
+    width: 90%;
+    background-color: lightgrey;
+}
+
+.banner {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+#country-box {
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+#country {
+    outline: 5px groove black;
+    height: 80%;
+    background-color: white;
+}
+
+#bottom {
+    flex-direction: row;
+}
+
+#controls {
+    flex-direction: column;
+    border-left: 5px groove black ;
+    height: 100%;
+    width: 30%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lightgray;
+}
+
+#scoreboard {
+    outline: 5px groove black;
+    height: 10%;
+    width: 78%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    background-color: white;
+}
+
+#score {
+    width: 60%;
+}
+
+#lives {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.heart {
+    height: 40px;
+    width: 40px;
+}
+
+#answers {
+    outline: 5px groove black;
+    height: 70%;
+    width: 80%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.answer-button {
+    margin: 10px;
+    height: 20%;
+}

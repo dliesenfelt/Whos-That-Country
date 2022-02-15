@@ -9,14 +9,39 @@
     <script src="./scripts/app.js" defer></script>
 </head>
 <body>
-    <header class="banner">
-        <h1>Who's That Country?</h1>
-    </header>
-    <div class="container">
-
-    </div>
-    <footer class="banner">
-
-    </footer>
+   <div class="container" id="game-window">
+        <div class="container" id="question-window">
+            <div class="container" id="question-container">
+                <div class="banner" id="top">
+                    <h3>Who's that Country ?</h3>
+                </div>
+                <div class="container" id="country-box">
+                    <img id="country" src="./assets/images/placeholder.png" alt="The border of a Country">
+                </div>
+                <div class="banner" id="bottom">
+                    <h3>It's..... </h3>
+                    <h3 id="answer">?</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="controls">
+            <div class="container" id="scoreboard"> 
+                <div class="container" id="score">
+                    <h3 id="player-score">Score: 0</h3>
+                </div>
+                <div class="container" id="lives">
+                    <img class="heart" id="life-1" src="./assets/images/full-heart.png" alt="pixle heart">
+                    <img class="heart" id="life-2" src="./assets/images/full-heart.png" alt="pixle heart">
+                    <img class="heart" id="life-3" src="./assets/images/full-heart.png" alt="pixle heart">
+                </div>
+            </div>
+            <div class="container" id="answers">
+                <button class="answer-button" id="answer-a">A</button>
+                <button class="answer-button" id="answer-b">B</button>
+                <button class="answer-button" id="answer-c">C</button>
+                <button class="answer-button" id="answer-d">D</button>
+            </div>
+        </div>
+   </div>
 </body>
 </html>
