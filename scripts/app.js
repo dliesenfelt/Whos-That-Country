@@ -1,7 +1,8 @@
 document.getElementById('start-button').addEventListener("click", function startGame() {
     // Hides the start button
     document.getElementById('start-button').style.visibility = 'hidden';
-    // Creates a class to make all the countries
+    console.log('Game Has Started')
+    // Creates a class for giving for all the countries giving them atrributes of name and an image of thier border
     class Country {
         constructor(name, image) {
             this.name = name;
@@ -88,35 +89,69 @@ document.getElementById('start-button').addEventListener("click", function start
     const rom = new Country('Romania', "./assets/images/borders/rom.png");
     const cambod = new Country('Cambodia', "./assets/images/borders/cambod.png");
     //An array to hold all the countries
-    let coutryPool = [rus,can,china,usa,bra,australia,india,argen,kaz,alg,drcongo,saudi,
+    const countryPool = [rus,can,china,usa,bra,australia,india,argen,kaz,alg,drcongo,saudi,
         mex,indo,sudan,libya,iran,mongo,peru,chad,niger,ango,mali,sAfrica,colombia,eth,
         boliva,mauri,egypt,nigeria,ven,pak,nam,moz,turky,chile,zam,mya,ss,tan,fra,som,car,
         ukr,mad,bots,ken,ye,thai,spa,turkmen,came,png,swe,uz,moro,iraq,para,zim,nor,jap,ger,
-        congo,fin,viet,malay,pol,oman,italy,phil,ecua,bf,nz,gab,gui,uk,rom,cambod,];
+        congo,fin,viet,malay,pol,oman,italy,phil,ecua,bf,nz,gab,gui,uk,rom,cambod,
+    ];
 
-    //function to load new coutry
-    const borderImage = document.getElementById('country').innerHTML;
-    function newCountry() {
-        
+    //function to get a new question 
+    var questionImage = document.getElementById('country');
 
+    function newQuestion() {
+        let randomQuestion = countryPool[Math.floor(Math.random() * countryPool.length)]
+        questionImage.src = document.getElementById("country").src = randomQuestion.image;
+        answer(randomQuestion)
     };
-    //function for checking answer
-    const buttonA = document.getElementById('answer-a').innerHTML;
-    const buttonB = document.getElementById('answer-b').innerHTML;
-    const buttonC = document.getElementById('answer-c').innerHTML;
-    const buttonD = document.getElementById('answer-d').innerHTML;
-    function answer() {
+    newQuestion()
+    
+    //function for selecting an answer
+    function answer(randomQuestion) {
+        let buttonA = document.getElementById('answer-a');
+        let buttonB = document.getElementById('answer-b');
+        let buttonC = document.getElementById('answer-c');
+        let buttonD = document.getElementById('answer-d');
+        buttonA.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
+        buttonB.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
+        buttonC.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
+        buttonD.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
+        //make one of answers the correct answer
+        let key = Math.floor(Math.random() * 4)
+        console.log(key);
+        switch (key) {
+            case 0: 
+                buttonA.innerHTML = randomQuestion.name
+                break;
+            
+            case 1: 
+                buttonB.innerHTML = randomQuestion.name
+                break;
 
+            case 2: 
+                buttonC.innerHTML = randomQuestion.name
+                break;
+
+            case 3: 
+                buttonD.innerHTML = randomQuestion.name
+                break;
+
+            default:
+                break;
+        }
     };
+
     //function to update score
     const playerScore = document.getElementById('player-score')
     function score() {
-        
+
     };
+
     //function to lose lives and game over
     function gameOver() {
 
     };
+
     //function to restart game
     function clearState() {
 

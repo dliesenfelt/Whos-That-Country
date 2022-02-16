@@ -65,7 +65,17 @@ body {
 }
 
 #bottom {
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#next-button {
+    outline: 2px solid brown;
+    visibility: hidden;
+}
+
+#answer {
+    margin: 0;
 }
 
 #controls {
