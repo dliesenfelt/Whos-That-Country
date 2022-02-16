@@ -6,8 +6,8 @@ document.getElementById('start-button').addEventListener("click", function start
         constructor(name, image) {
             this.name = name;
             this.image = image;
-        }
-    }
+        };
+    };
     //Making all the countries
     const rus = new Country('Russia' , "./assets/images/borders/russia.png");
     const can = new Country('Canada', "./assets/images/borders/canada.png");
@@ -92,26 +92,33 @@ document.getElementById('start-button').addEventListener("click", function start
         mex,indo,sudan,libya,iran,mongo,peru,chad,niger,ango,mali,sAfrica,colombia,eth,
         boliva,mauri,egypt,nigeria,ven,pak,nam,moz,turky,chile,zam,mya,ss,tan,fra,som,car,
         ukr,mad,bots,ken,ye,thai,spa,turkmen,came,png,swe,uz,moro,iraq,para,zim,nor,jap,ger,
-        congo,fin,viet,malay,pol,oman,italy,phil,ecua,bf,nz,gab,gui,uk,rom,cambod,]
+        congo,fin,viet,malay,pol,oman,italy,phil,ecua,bf,nz,gab,gui,uk,rom,cambod,];
 
     //function to load new coutry
+    const borderImage = document.getElementById('country').innerHTML;
     function newCountry() {
+        
 
-    }
+    };
     //function for checking answer
+    const buttonA = document.getElementById('answer-a').innerHTML;
+    const buttonB = document.getElementById('answer-b').innerHTML;
+    const buttonC = document.getElementById('answer-c').innerHTML;
+    const buttonD = document.getElementById('answer-d').innerHTML;
     function answer() {
 
-    }
+    };
     //function to update score
+    const playerScore = document.getElementById('player-score')
     function score() {
-
-    }
+        
+    };
     //function to lose lives and game over
     function gameOver() {
 
-    }
+    };
     //function to restart game
     function clearState() {
 
-    }
+    };
 });

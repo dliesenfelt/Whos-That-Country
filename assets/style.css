@@ -5,6 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: black;
+    flex-direction: column;
 }
 
 .container {
@@ -115,4 +116,8 @@ body {
 .answer-button {
     margin: 10px;
     height: 20%;
+}
+
+#version {
+    color: white;
 }
