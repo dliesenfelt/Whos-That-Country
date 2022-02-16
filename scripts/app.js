@@ -97,54 +97,90 @@ document.getElementById('start-button').addEventListener("click", function start
     ];
 
     //function to get a new question 
-    var questionImage = document.getElementById('country');
-
+    let questionImage = document.getElementById('country');
+    let randomQuestion = countryPool[Math.floor(Math.random() * countryPool.length)];
     function newQuestion() {
-        let randomQuestion = countryPool[Math.floor(Math.random() * countryPool.length)]
         questionImage.src = document.getElementById("country").src = randomQuestion.image;
-        answer(randomQuestion)
+        answer(randomQuestion);
     };
-    newQuestion()
-    
-    //function for selecting an answer
+    newQuestion();
+
+    //function for setting the answer buttons
     function answer(randomQuestion) {
         let buttonA = document.getElementById('answer-a');
         let buttonB = document.getElementById('answer-b');
         let buttonC = document.getElementById('answer-c');
         let buttonD = document.getElementById('answer-d');
-        buttonA.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
-        buttonB.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
-        buttonC.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
-        buttonD.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name
-        //make one of answers the correct answer
-        let key = Math.floor(Math.random() * 4)
+        buttonA.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
+        buttonB.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
+        buttonC.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
+        buttonD.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
+        console.log(randomQuestion.name);
+        //Makes one of the answer buttons the correct answer
+        let key = Math.floor(Math.random() * 4);
         console.log(key);
         switch (key) {
             case 0: 
-                buttonA.innerHTML = randomQuestion.name
+                buttonA.innerHTML = randomQuestion.name;
                 break;
             
             case 1: 
-                buttonB.innerHTML = randomQuestion.name
+                buttonB.innerHTML = randomQuestion.name;
                 break;
 
             case 2: 
-                buttonC.innerHTML = randomQuestion.name
+                buttonC.innerHTML = randomQuestion.name;
                 break;
 
             case 3: 
-                buttonD.innerHTML = randomQuestion.name
+                buttonD.innerHTML = randomQuestion.name;
                 break;
 
             default:
                 break;
-        }
+        };
+        //selecting answers
+        //Answer A
+        buttonA.addEventListener('click', function answerA(){
+            if (buttonA.innerHTML = randomQuestion.name) {
+                console.log('correct');
+            } else {
+               console.log('wrong');
+            }
+        })
+        //Answer B
+        buttonB.addEventListener('click', function answerb(){
+            if (buttonB.innerHTML = randomQuestion.name) {
+                console.log('correct');
+            } else {
+               console.log('wrong');
+            }
+        })
+        //Answer C
+        buttonC.addEventListener('click', function answerC(){
+            if (buttonC.innerHTML = randomQuestion.name) {
+                console.log('correct');
+            } else {
+               console.log('wrong');
+            }
+        })
+        //Answer D
+        buttonD.addEventListener('click', function answerD(){
+            if (buttonD.innerHTML = randomQuestion.name) {
+                console.log('correct');
+            } else {
+                console.log('wrong');
+            }
+        })
+       
     };
 
-    //function to update score
-    const playerScore = document.getElementById('player-score')
-    function score() {
+    
 
+    //function to update score
+    let playerScore = document.getElementById('player-score').innerHTML
+    function score() {
+        
     };
 
     //function to lose lives and game over
