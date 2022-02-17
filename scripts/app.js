@@ -8,7 +8,9 @@ document.getElementById('start-button').addEventListener("click", function start
     console.log('Game Has Started')
     //player score is set
     let playerScore = 0;
-    document.getElementById('player-score').innerHTML = playerScore
+    document.getElementById('player-score').innerHTML = playerScore;
+
+    let playerLives = 3;
     // Creates a class for giving for all the countries giving them atrributes of name and an image of thier border
     class Country {
         constructor(name, image) {
@@ -110,6 +112,7 @@ document.getElementById('start-button').addEventListener("click", function start
         questionImage.src = document.getElementById("country").src = randomQuestion.image;
         answer(randomQuestion);
         document.getElementById('next-button').style.visibility = 'hidden';
+        document.getElementById('feedback').style.visibility = 'hidden';
     };
     newQuestion();
 
@@ -146,87 +149,82 @@ document.getElementById('start-button').addEventListener("click", function start
             default:
                 break;
         };
-        console.log('A: ' + buttonA.innerHTML, 'B: ' + buttonB.innerHTML, 'C: ' + buttonC.innerHTML, 'D: ' + buttonD.innerHTML);
+        console.log('A: ' + buttonA.innerHTML, 'B: ' + buttonB.innerHTML, 'C: ' + buttonC.innerHTML, 'D: ' + buttonD.innerHTML, 'Player Lives: ' + playerLives,);
         //Answer A
         buttonA.addEventListener('click', function answerA(){
             if (buttonA.innerHTML === randomQuestion.name) {
-                updateScore();
-                next();
+                correctAnswer();
             } else {
-                lives--;
-                next();
-                loseLives;
+                wrongAnswer();
             };
         });
         //Answer B
         buttonB.addEventListener('click', function answerB(){
             if (buttonB.innerHTML === randomQuestion.name) {
-                updateScore();
-                next();
+                correctAnswer();
             } else {
-                lives--;
-                next();
-                loseLives();
+                wrongAnswer();
             };
         });
         //Answer C
         buttonC.addEventListener('click', function answerC(){
             if (buttonC.innerHTML === randomQuestion.name) {
-                updateScore();
-                next();
+                correctAnswer();
             } else {
-                loseLives();
-                next();
+                wrongAnswer();
             };
         });
         //Answer D
         buttonD.addEventListener('click', function answerD(){
             if (buttonD.innerHTML === randomQuestion.name) {
-                updateScore();
-                next();
+                correctAnswer();
             } else {
-                loseLives()
-                next();
+                wrongAnswer();
             };
         });
     };
 
-    // function to update score 
-    function updateScore() {
+    // function for correct answer
+    function correctAnswer() {
         playerScore++;
         document.getElementById('player-score').innerHTML = playerScore;
-        return playerScore
-    }
-    //function to make next question
-    function next() {
+        document.getElementById('feedback').style.visibility = 'visible';
+        document.getElementById('feedback').innerHTML = 'Correct!';
         document.getElementById('next-button').style.visibility = 'visible';
-        console.log('number of lives' + lives)
+        return playerScore;
     }
+    //function for wrong answer 
+    // let lives = 3;
+    // if (lives === 2){
+    //     document.getElementById('life-1').src = './assets/images/dead-heart.png';
+    // };
+    // if (lives === 1) {
+    //     document.getElementById('life-2').src = './assets/images/dead-heart.png';
+    // };
+    // if (lives <= 0) {
+    //     document.getElementById('life-3').src = './assets/images/dead-heart.png';
+    //     feedBack.innerHTML = 'GAME OVER :(';
+
+    // };
+    // function wrongAnswer() {
+       
+    // }
+    function wrongAnswer() {
+        playerLives--;
+        document.getElementById('feedback').style.visibility = 'visible';
+        document.getElementById('feedback').innerHTML = 'Incorrect!';
+        document.getElementById('next-button').style.visibility = 'visible';
+        return playerLives;
+    }
+
+    // Next question 
     document.getElementById('next-button').addEventListener('click', newQuestion)
-    //function to lose lives 
-    let lives = 3;
-    function loseLives() {
-        lives--;
-        if (lives === 2){
-            document.getElementById('life-1').src = './assets/images/dead-heart.png';
-        };
-        if (lives === 1) {
-            document.getElementById('life-2').src = './assets/images/dead-heart.png';
-        };
-        if (lives === 0) {
-            document.getElementById('life-3').src = './assets/images/dead-heart.png';
-            gameOver();
-        };
-    }
-    //gameover
-    function gameOver() {
-        if (lives === 0) {
 
-        }
-    };
 
-    //function to restart game
-    function clearState() {
-
-    };
+    
 });
+
+//function to restart game
+function clearState() {
+
+};

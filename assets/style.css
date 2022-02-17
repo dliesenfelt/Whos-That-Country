@@ -8,9 +8,17 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    font-size: 1.5rem;
+}
+
 h3 {
     font-family: sans-serif;
     text-shadow: 5px 5px 5px #2c2c2c3f;
+}
+
+#rotate {
+    visibility: hidden;
 }
 
 .container {
@@ -131,6 +139,7 @@ h3 {
     justify-content: center;
     width: 50%;
     color: white;
+    text-align: center;
 }
 
 #feedback {
@@ -138,6 +147,7 @@ h3 {
     font-size: 2rem;
     font-family: sans-serif;
     font-weight: 800;
+    margin: 10px;
 }
 
 #answers {
@@ -183,4 +193,69 @@ h3 {
 
 #version {
     color: white;
+    margin: 0;
+}
+
+@media (max-width: 950px) and (orientation: landscape) {
+    #question-window {
+        width: 90%;
+        height: 100%;
+    }
+
+    #country {
+        height: 80%;
+    }
+
+    #scoreboard {
+        width: 50%;
+        font-size: 1rem;
+        margin: 10px;
+    }
+
+    .heart {
+        height: 20px;
+        width: 20px;
+    }
+
+    .button {
+        width: 70%;
+        height: 40%;
+        font-size: 0.5rem;
+        margin: 5px;
+        padding: 15px;
+    }
+
+    #start-button {
+        height: 80%;
+    }
+
+    #next-button {
+        height: 80%;
+    }
+
+    #feedback-container {
+        width: 70%;
+    }
+
+    #feedback {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 500px) {
+    * {
+        visibility: hidden;
+    }
+
+    #rotate {
+        visibility: visible;
+        color: #ffffff;
+        font-size: 2rem;
+        text-transform: uppercase;
+        transform: rotate(90deg);
+        margin-top: 425px;
+        width: 500px;
+        text-shadow: 0px 0px 10px black;
+    }
 }
