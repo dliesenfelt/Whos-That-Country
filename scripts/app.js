@@ -1,8 +1,12 @@
 document.getElementById('start-button').addEventListener("click", function startGame() {
-    // Hides the start button
+    // Button visibility is updated
     document.getElementById('start-button').style.visibility = 'hidden';
+    document.getElementById('answer-a').style.visibility = 'visible';
+    document.getElementById('answer-b').style.visibility = 'visible';
+    document.getElementById('answer-c').style.visibility = 'visible';
+    document.getElementById('answer-d').style.visibility = 'visible';
     console.log('Game Has Started')
-    //
+    //player score is set
     let playerScore = 0;
     document.getElementById('player-score').innerHTML = playerScore
     // Creates a class for giving for all the countries giving them atrributes of name and an image of thier border
@@ -79,7 +83,7 @@ document.getElementById('start-button').addEventListener("click", function start
     const fin = new Country('Finland', "./assets/images/borders/fin.png");
     const viet = new Country('Vietnam', "./assets/images/borders/viet.png");
     const malay = new Country('Malaysia', "./assets/images/borders/malay.png");
-    const pol = new Country('Polnd', "./assets/images/borders/pol.png");
+    const pol = new Country('Poland', "./assets/images/borders/pol.png");
     const oman = new Country('Oman', "./assets/images/borders/oman.png");
     const italy = new Country('Italy', "./assets/images/borders/italy.png");
     const phil = new Country('Philippines', "./assets/images/borders/phil.png");

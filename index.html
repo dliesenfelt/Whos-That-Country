@@ -10,41 +10,45 @@
 </head>
 <body>
    <div class="container" id="game-window">
-        <div class="container" id="question-window">
-            <div class="container" id="question-container">
-                <div class="banner" id="top">
-                    <h3>Who's that Country ?</h3>
+    <div class="container" id="question-window">
+        <div class="container" id="question-container">
+            <div class="banner" id="top">
+                <div class="container" id="scoreboard"> 
+                    <div class="container" id="score">
+                        <h3>Score:</h3>
+                        <h3 id="player-score"></h3>
+                    </div>
+                    <div class="container" id="lives">
+                        <img class="heart" id="life-1" src="./assets/images/full-heart.png" alt="pixle heart">
+                        <img class="heart" id="life-2" src="./assets/images/full-heart.png" alt="pixle heart">
+                        <img class="heart" id="life-3" src="./assets/images/full-heart.png" alt="pixle heart">
+                    </div>
                 </div>
-                <div class="container" id="country-box">
-                    <button id="start-button">Start Game!</button>
-                    <img id="country" src="./assets/images/placeholder.png" alt="The border of a Country">
+                <div class="container" id="button-container">
+                    <button class="button" id="start-button">Start Game!</button>
+                    <button class="button" id="next-button">NEXT</button>
                 </div>
-                <div class="banner" id="bottom">
-                    <button id="next-button">NEXT</button>
-                    <h3 id="answer"> It's ..... ?</h3>
-                </div>
+            </div>
+            <div class="container" id="country-box">
+                <img id="country" src="./assets/images/placeholder.png" alt="The border of a Country">
+            </div>
+            <div class="banner" id="bottom">
+                <h3>Who's that Country ?</h3>
             </div>
         </div>
-        <div class="container" id="controls">
-            <div class="container" id="scoreboard"> 
-                <div class="container" id="score">
-                    <h3>Score:</h3>
-                    <h3 id="player-score"></h3>
-                </div>
-                <div class="container" id="lives">
-                    <img class="heart" id="life-1" src="./assets/images/full-heart.png" alt="pixle heart">
-                    <img class="heart" id="life-2" src="./assets/images/full-heart.png" alt="pixle heart">
-                    <img class="heart" id="life-3" src="./assets/images/full-heart.png" alt="pixle heart">
-                </div>
+    </div>
+    <div class="container" id="answer-container">
+        <div class="container" id="answers">
+            <div class="container" id="feedback-container">
+                <h3 id="feedback"></h3>
             </div>
-            <div class="container" id="answers">
-                <button class="answer-button" id="answer-a">A</button>
-                <button class="answer-button" id="answer-b">B</button>
-                <button class="answer-button" id="answer-c">C</button>
-                <button class="answer-button" id="answer-d">D</button>
-            </div>
+            <button class="button" id="answer-a"></button>
+            <button class="button" id="answer-b"></button>
+            <button class="button" id="answer-c"></button>
+            <button class="button" id="answer-d"></button>
         </div>
+    </div>
    </div>
-   <p id="version">V 0.1.2</p>
+   <p id="version">V 0.1.2.1</p>
 </body>
 </html>
