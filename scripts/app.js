@@ -2,6 +2,9 @@ document.getElementById('start-button').addEventListener("click", function start
     // Hides the start button
     document.getElementById('start-button').style.visibility = 'hidden';
     console.log('Game Has Started')
+    //
+    let playerScore = 0;
+    document.getElementById('player-score').innerHTML = playerScore
     // Creates a class for giving for all the countries giving them atrributes of name and an image of thier border
     class Country {
         constructor(name, image) {
@@ -97,11 +100,12 @@ document.getElementById('start-button').addEventListener("click", function start
     ];
 
     //function to get a new question 
-    let questionImage = document.getElementById('country');
-    let randomQuestion = countryPool[Math.floor(Math.random() * countryPool.length)];
     function newQuestion() {
+        let questionImage = document.getElementById('country');
+        let randomQuestion = countryPool[Math.floor(Math.random() * countryPool.length)];
         questionImage.src = document.getElementById("country").src = randomQuestion.image;
         answer(randomQuestion);
+        document.getElementById('next-button').style.visibility = 'hidden';
     };
     newQuestion();
 
@@ -115,10 +119,9 @@ document.getElementById('start-button').addEventListener("click", function start
         buttonB.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
         buttonC.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
         buttonD.innerHTML = countryPool[Math.floor(Math.random() * countryPool.length)].name;
-        console.log(randomQuestion.name);
+        console.log('answer: ' + randomQuestion.name);
         //Makes one of the answer buttons the correct answer
         let key = Math.floor(Math.random() * 4);
-        console.log(key);
         switch (key) {
             case 0: 
                 buttonA.innerHTML = randomQuestion.name;
@@ -139,53 +142,83 @@ document.getElementById('start-button').addEventListener("click", function start
             default:
                 break;
         };
-        //selecting answers
+        console.log('A: ' + buttonA.innerHTML, 'B: ' + buttonB.innerHTML, 'C: ' + buttonC.innerHTML, 'D: ' + buttonD.innerHTML);
         //Answer A
         buttonA.addEventListener('click', function answerA(){
-            if (buttonA.innerHTML = randomQuestion.name) {
-                console.log('correct');
+            if (buttonA.innerHTML === randomQuestion.name) {
+                updateScore();
+                next();
             } else {
-               console.log('wrong');
-            }
-        })
+                lives--;
+                next();
+                loseLives;
+            };
+        });
         //Answer B
-        buttonB.addEventListener('click', function answerb(){
-            if (buttonB.innerHTML = randomQuestion.name) {
-                console.log('correct');
+        buttonB.addEventListener('click', function answerB(){
+            if (buttonB.innerHTML === randomQuestion.name) {
+                updateScore();
+                next();
             } else {
-               console.log('wrong');
-            }
-        })
+                lives--;
+                next();
+                loseLives();
+            };
+        });
         //Answer C
         buttonC.addEventListener('click', function answerC(){
-            if (buttonC.innerHTML = randomQuestion.name) {
-                console.log('correct');
+            if (buttonC.innerHTML === randomQuestion.name) {
+                updateScore();
+                next();
             } else {
-               console.log('wrong');
-            }
-        })
+                loseLives();
+                next();
+            };
+        });
         //Answer D
         buttonD.addEventListener('click', function answerD(){
-            if (buttonD.innerHTML = randomQuestion.name) {
-                console.log('correct');
+            if (buttonD.innerHTML === randomQuestion.name) {
+                updateScore();
+                next();
             } else {
-                console.log('wrong');
-            }
-        })
-       
+                loseLives()
+                next();
+            };
+        });
     };
 
-    
-
-    //function to update score
-    let playerScore = document.getElementById('player-score').innerHTML
-    function score() {
-        
-    };
-
-    //function to lose lives and game over
+    // function to update score 
+    function updateScore() {
+        playerScore++;
+        document.getElementById('player-score').innerHTML = playerScore;
+        return playerScore
+    }
+    //function to make next question
+    function next() {
+        document.getElementById('next-button').style.visibility = 'visible';
+        console.log('number of lives' + lives)
+    }
+    document.getElementById('next-button').addEventListener('click', newQuestion)
+    //function to lose lives 
+    let lives = 3;
+    function loseLives() {
+        lives--;
+        if (lives === 2){
+            document.getElementById('life-1').src = './assets/images/dead-heart.png';
+        };
+        if (lives === 1) {
+            document.getElementById('life-2').src = './assets/images/dead-heart.png';
+        };
+        if (lives === 0) {
+            document.getElementById('life-3').src = './assets/images/dead-heart.png';
+            gameOver();
+        };
+    }
+    //gameover
     function gameOver() {
+        if (lives === 0) {
 
+        }
     };
 
     //function to restart game

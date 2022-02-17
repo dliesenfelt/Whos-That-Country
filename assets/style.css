@@ -70,7 +70,6 @@ body {
 }
 
 #next-button {
-    outline: 2px solid brown;
     visibility: hidden;
 }
 
