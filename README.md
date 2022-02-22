@@ -9,3 +9,5 @@ Whos that country a game where you guess the what country is shown based off it 
 - You answer a question right and you add a point to the score.
 
 That's it pretty simple.
+link to game:
+https://dreamy-allen-892580.netlify.app/
